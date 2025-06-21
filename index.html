@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Sanjeevini Trust</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ✅ Top-right corner leaf image -->
+  <img src="leaf_img.svg" alt="Leaf" class="leaf-top-right" />
+
+  <header>
+    <div class="top-bar">Helpline : 6366975666</div>
+    <nav class="navbar">
+      <img src="header_logo.svg" alt="Cancer Ribbon" />
+
+      <!-- Hamburger Icon -->
+      <button id="menu-toggle" class="hamburger">&#9776;</button>
+
+      <!-- Navigation Links -->
+      <ul id="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a class="active" href="index.html">About Us</a></li>
+        <li><a href="involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h1>About Us</h1>
+    <div class="about-content">
+      <img src="cancer_ribbon.png" alt="Cancer Ribbon" />
+      <div>
+        <h2>Our Mission</h2>
+        <p>At Sanjeevini Cancer Seva Trust, we are devoted to providing compassionate care and essential support for cancer patients.</p>
+        <p>We strive to offer both practical assistance and emotional comfort, ensuring that those in need receive the help and resources necessary during this challenging time.</p>
+
+        <h2>Our Vision</h2>
+        <ul class="orange-checkbox-list">
+          <li>Provide Financial Assistance in Cancer Diagnosis & Treatment</li>
+          <li>Conduct Educational Workshops</li>
+          <li>Increase Community Outreach to Create Awareness about cancer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="objectives">
+    <h2>Objectives of the Sanjeevini Cancer Seva Trust</h2>
+    <ul>
+      <li>Financial assistance to the poor & needy patients diagnosed with cancer.</li>
+      <li>Set up & support cancer institutes and medical colleges in India.</li>
+      <li>Transportation assistance for patients & caretakers.</li>
+      <li>Accommodation till treatment completion.</li>
+      <li>Follow-up care for patients through the organization.</li>
+      <li>Psychological counseling and social support to families.</li>
+      <li>Awareness programs about early cancer treatment.</li>
+      <li>Old age home for the needy via a sustainable model.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <!-- Footer Navigation Menu -->
+    <nav class="footer-nav">
+      <img src="vision_img.svg" alt="Ribbon" class="ribbon-icon" />
+      <a href="home.html">Home</a>
+      <a href="index.html">About Us</a>
+      <a href="involved.html">Get Involved</a>
+      <a href="#">Contact Us</a>
+      <img src="vision_img.svg" alt="Ribbon" class="ribbon-icon" />
+    </nav>
+
+    <!-- White Box Section -->
+    <div class="footer-box">
+      <img src="header_logo.svg" alt="Sanjeevini Logo" />
+      <h2>With You in Every Step of Care During Cancer</h2>
+      <a href="#" class="read-more-btn">Read More</a>
+    </div>
+
+    <!-- Purple Contact Info Section -->
+    <div class="footer-contact">
+      <div class="contact-item">
+        <img src="phone.svg" alt="Phone" />
+        <p>+91 6366975666</p>
+      </div>
+      <div class="contact-item">
+        <img src="email.svg" alt="Email" />
+        <p>sanjeevinicancerseva@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <img src="location.svg" alt="Location" />
+        <p>
+          Mangalore Institute of Oncology<br />
+          Pumpwell, Mangaluru<br />
+          Dakshina Kannada – 575002
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      menuToggle.addEventListener('click', function () {
+        navLinks.classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+</html>
