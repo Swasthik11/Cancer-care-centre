@@ -101,15 +101,27 @@
   </footer>
 
   <!-- ✅ Hamburger Toggle Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("nav-links");
+   <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
 
-      hamburger.addEventListener("click", function () {
-        navLinks.classList.toggle("show");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Optional: Close nav on link click (mobile)
+    const links = navLinks.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
       });
     });
+  </script>
+  <script>
+    function toggleMobileMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
   </script>
 </body>
 </html>
