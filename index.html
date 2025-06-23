@@ -5,6 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanjeevini Cancer Seva Trust</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Inline hamburger-specific fix */
+    .hamburger {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+        font-size: 28px;
+        background: none;
+        border: none;
+        color: #7b2d8a;
+        cursor: pointer;
+        z-index: 1001;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+      }
+
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 10px 0;
+        z-index: 1000;
+      }
+
+      #nav-links.show {
+        display: flex;
+      }
+
+      #nav-links li {
+        text-align: right;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Top-right leaf image -->
@@ -15,10 +59,8 @@
     <div class="top-bar">Helpline : 6366975666</div>
     <nav class="navbar">
       <img src="header_logo.svg" alt="Cancer Ribbon" />
-      
       <!-- Hamburger Menu Icon -->
-      <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
-
+      <button class="hamburger" onclick="toggleMobileMenu()">&#9776;</button>
       <!-- Navigation Links -->
       <ul id="nav-links">
         <li><a href="home.html">Home</a></li>
@@ -29,7 +71,6 @@
     </nav>
   </header>
 
-  <!-- About Section -->
   <section class="about">
     <h1>About Us</h1>
     <div class="about-content">
@@ -49,7 +90,6 @@
     </div>
   </section>
 
-  <!-- Objectives -->
   <section class="objectives">
     <h2>Objectives of the Sanjeevini Cancer Seva Trust</h2>
     <ul>
@@ -64,7 +104,6 @@
     </ul>
   </section>
 
-  <!-- Footer -->
   <footer>
     <nav class="footer-nav">
       <img src="vision_img.svg" alt="Ribbon" class="ribbon-icon" />
@@ -101,7 +140,6 @@
     </div>
   </footer>
 
-  <!-- ✅ Hamburger Toggle Script -->
   <script>
     function toggleMobileMenu() {
       const navLinks = document.getElementById("nav-links");
