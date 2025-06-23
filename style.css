@@ -98,8 +98,6 @@ header, .about, .objectives, footer {
   cursor: pointer;
 }
 
-
-
 /* About Section */
 .about {
   padding: 40px 30px;
@@ -318,7 +316,7 @@ footer {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px; /* Adjusted to avoid overlap with top-bar */
     right: 30px;
     background-color: #fff;
     border: 1px solid #e8c6f4;
@@ -335,5 +333,28 @@ footer {
 
   #nav-links li {
     text-align: right;
+  }
+
+  /* Ensure navbar padding doesn't interfere */
+  .navbar {
+    padding: 15px 20px;
+  }
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 480px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content img {
+    margin: 0 auto;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
