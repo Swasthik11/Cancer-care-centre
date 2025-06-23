@@ -42,7 +42,8 @@ body::after {
   white-space: nowrap;
 }
 
-header, .about, .objectives, footer {
+/* Sections Layering */
+header, .about, .objectives, footer, section {
   position: relative;
   z-index: 2;
 }
@@ -65,13 +66,19 @@ header, .about, .objectives, footer {
   padding: 15px 30px;
   border-bottom: 1px solid #e8c6f4;
   position: relative;
-  z-index: 999;
+  z-index: 1001;
 }
 
+.navbar img {
+  height: 50px;
+}
+
+/* Nav Links */
 #nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
+  z-index: 1002;
 }
 
 #nav-links li {
@@ -89,7 +96,7 @@ header, .about, .objectives, footer {
   color: #7b2d8a;
 }
 
-/* Hamburger */
+/* Hamburger Button */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -97,7 +104,7 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1003;
 }
 
 /* About Section */
@@ -116,15 +123,12 @@ header, .about, .objectives, footer {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  z-index: 1;
 }
 
 .about-content img {
   width: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
-  position: relative;
-  z-index: 0;
 }
 
 .about-content div {
@@ -327,7 +331,7 @@ footer {
     display: none;
     position: absolute;
     top: 60px;
-    right: 30px;
+    right: 20px;
     background-color: #fff;
     border: 1px solid #e8c6f4;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -335,7 +339,7 @@ footer {
     padding: 10px 0;
     flex-direction: column;
     gap: 10px;
-    z-index: 1000;
+    z-index: 1002;
   }
 
   #nav-links.show {
@@ -349,6 +353,5 @@ footer {
 
   .about-content img {
     width: 100%;
-    z-index: 0;
   }
 }
