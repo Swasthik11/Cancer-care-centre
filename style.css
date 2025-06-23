@@ -105,6 +105,10 @@ header, .about, .objectives, footer, section {
   color: #7b2d8a;
   cursor: pointer;
   z-index: 1003;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* About Section */
@@ -193,7 +197,6 @@ header, .about, .objectives, footer, section {
 footer {
   background: #7b2d8a;
   color: #fff;
-  font-family: 'Segoe UI', sans-serif;
   padding-top: 40px;
 }
 
@@ -290,16 +293,6 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .mission-container,
-  .donate-section {
-    flex-direction: column;
-    padding: 30px 5%;
-  }
-
-  .mission-text {
-    padding-left: 0;
-  }
-
   .footer-nav {
     flex-direction: column;
     gap: 15px;
@@ -317,10 +310,6 @@ footer {
   .read-more-btn {
     padding: 8px 18px;
     font-size: 14px;
-  }
-
-  .impact-card {
-    max-width: 100%;
   }
 
   .hamburger {
