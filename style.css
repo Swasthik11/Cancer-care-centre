@@ -285,10 +285,14 @@ footer {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
   }
 
   .hamburger {
     display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
   }
 
   .navbar ul {
@@ -312,7 +316,8 @@ footer {
 
   .navbar ul li {
     text-align: center;
-    margin: 10px 0;
+    width: 100%;
+    padding: 10px 0;
   }
 
   .footer-box h2 {
