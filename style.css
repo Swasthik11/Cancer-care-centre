@@ -71,6 +71,22 @@ header, .about, .objectives, footer, section {
 
 .navbar img {
   height: 50px;
+  z-index: 1001;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #7b2d8a;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1002;
 }
 
 /* Nav Links */
@@ -94,21 +110,6 @@ header, .about, .objectives, footer, section {
 .navbar a.active,
 .navbar a:hover {
   color: #7b2d8a;
-}
-
-/* Hamburger Button */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #7b2d8a;
-  cursor: pointer;
-  z-index: 1003;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* About Section */
@@ -318,15 +319,15 @@ footer {
 
   #nav-links {
     display: none;
+    flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 20px;
     background-color: #fff;
     border: 1px solid #e8c6f4;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 10px 0;
-    flex-direction: column;
     gap: 10px;
     z-index: 1002;
   }
@@ -337,7 +338,11 @@ footer {
 
   #nav-links li {
     text-align: right;
-    padding: 5px 20px;
+    padding: 10px 20px;
+  }
+
+  .about-content {
+    flex-direction: column;
   }
 
   .about-content img {
