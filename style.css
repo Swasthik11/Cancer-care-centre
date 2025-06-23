@@ -96,6 +96,10 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
+  z-index: 9999; /* ⬅️ Higher than .about and everything else */
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 /* About Section */
