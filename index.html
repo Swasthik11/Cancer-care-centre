@@ -102,26 +102,20 @@
 
   <!-- ✅ Working Hamburger Menu Toggle -->
   <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
 
-    // Optional: Close nav on link click (mobile)
-    const links = navLinks.querySelectorAll("a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
+  const links = navLinks.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
     });
-  </script>
-  <script>
-    function toggleMobileMenu() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('show');
-    }
-  </script>
+  });
+</script>
+
 </body>
 </html>
