@@ -7,28 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top-right leaf image -->
-  <img src="leaf_img.svg" alt="Leaf" class="leaf-top-right" />
-
   <!-- Header -->
   <header>
     <div class="top-bar">Helpline : 6366975666</div>
     <nav class="navbar">
       <img src="header_logo.svg" alt="Cancer Ribbon" />
       <!-- Hamburger Menu Icon -->
-<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
-
-<!-- Navigation Links -->
-<ul id="nav-links">
+      <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+      <!-- Navigation Links -->
+      <ul id="nav-links">
         <li><a href="home.html">Home</a></li>
         <li><a href="index.html">About Us</a></li>
         <li><a href="involved.html">Get Involved</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
-
-     </nav>
+    </nav>
   </header>
-
   <section class="about">
     <h1>About Us</h1>
     <div class="about-content">
@@ -103,25 +97,9 @@
 
   <!-- Responsive Hamburger Menu JS -->
   <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // Optional: Close nav on link click (mobile)
-    const links = navLinks.querySelectorAll("a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-  </script>
-  <script>
     function toggleMobileMenu() {
       const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('show');
+      navLinks.classList.toggle('show'); // Use 'show' to match CSS
     }
   </script>
   
