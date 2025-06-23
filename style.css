@@ -26,7 +26,7 @@ body {
   pointer-events: none;
 }
 
-/* Watermark Text */
+/* Watermark */
 body::after {
   content: "SANJEEVINI";
   position: fixed;
@@ -38,11 +38,11 @@ body::after {
   opacity: 0.05;
   z-index: 0;
   pointer-events: none;
-  font-family: 'Segoe UI', sans-serif;
   white-space: nowrap;
 }
 
-header, .about, .objectives, footer {
+/* Layer control */
+header, .about, .objectives, footer, section {
   position: relative;
   z-index: 1;
 }
@@ -65,15 +65,16 @@ header, .about, .objectives, footer {
   padding: 15px 30px;
   border-bottom: 1px solid #e8c6f4;
   position: relative;
+  z-index: 1000;
+}
+
+.navbar img {
+  height: 50px;
 }
 
 #nav-links {
   display: flex;
   gap: 20px;
-  list-style: none;
-}
-
-#nav-links li {
   list-style: none;
 }
 
@@ -88,7 +89,7 @@ header, .about, .objectives, footer {
   color: #7b2d8a;
 }
 
-/* Hamburger */
+/* Hamburger Button */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -96,10 +97,41 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  z-index: 9999; /* ⬅️ Higher than .about and everything else */
   position: absolute;
+  top: 50%;
   right: 20px;
-  top: 20px;
+  transform: translateY(-50%);
+  z-index: 2000;
+}
+
+/* Responsive Nav Menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #e8c6f4;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1500; /* ABOVE all other sections */
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links li {
+    padding: 8px 20px;
+    text-align: right;
+  }
 }
 
 /* About Section */
@@ -135,60 +167,13 @@ header, .about, .objectives, footer {
   margin-top: 10px;
 }
 
-/* Checkbox List */
-.orange-checkbox-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.orange-checkbox-list li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.orange-checkbox-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 5px;
-  width: 16px;
-  height: 16px;
-  background-color: #f9b233;
-  border-radius: 3px;
-}
-
-/* Objectives */
-.objectives {
-  padding: 40px 30px;
-}
-
-.objectives h2 {
-  text-align: center;
-  color: #7b2d8a;
-  margin-bottom: 20px;
-}
-
-.objectives ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.objectives li {
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 15px;
-  background: url('pointer.png') no-repeat left center;
-  background-size: 30px 30px;
-  line-height: 1.6;
-}
-
 /* Footer */
 footer {
   background: #7b2d8a;
   color: #fff;
   padding-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-nav {
@@ -207,7 +192,6 @@ footer {
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
-  transition: text-decoration 0.3s ease;
 }
 
 .footer-nav a:hover {
@@ -225,26 +209,6 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.footer-logo-icon {
-  font-size: 30px;
-  color: #7b2d8a;
-}
-
-.footer-logo span {
-  font-size: 24px;
-  font-weight: bold;
-  color: #7b2d8a;
-  letter-spacing: 1px;
-}
-
 .footer-box h2 {
   font-size: 24px;
   font-weight: bold;
@@ -259,7 +223,6 @@ footer {
   border-radius: 6px;
   font-weight: bold;
   white-space: nowrap;
-  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
@@ -267,6 +230,7 @@ footer {
   background-color: #d8a31a;
 }
 
+/* Footer Contact */
 .footer-contact {
   display: flex;
   justify-content: space-around;
@@ -310,42 +274,7 @@ footer {
   user-select: none;
 }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* Adjusted to avoid overlap with top-bar */
-    right: 30px;
-    background-color: #fff;
-    border: 1px solid #e8c6f4;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    gap: 15px;
-  }
-
-  #nav-links.show {
-    display: flex;
-  }
-
-  #nav-links li {
-    text-align: right;
-  }
-
-  /* Ensure navbar padding doesn't interfere */
-  .navbar {
-    padding: 15px 20px;
-  }
-}
-
-/* Additional Responsive Adjustments */
+/* Additional Small Screen Fix */
 @media (max-width: 480px) {
   .about-content {
     flex-direction: column;
