@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Involved - Sanjeevini Trust</title>
+  <link rel="stylesheet" href="involved.css" />
+</head>
+<body>
+  <!-- Top-right leaf image -->
+  <img src="leaf_img.svg" alt="Leaf" class="leaf-top-right" />
+
+  <!-- Header -->
+  <header>
+    <div class="top-bar">Helpline : 6366975666</div>
+    <nav class="navbar">
+      <img src="header_logo.svg" alt="Cancer Ribbon" />
+
+     
+   <!-- Hamburger Menu Icon -->
+<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+
+<!-- Navigation Links -->
+<ul id="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- Page Heading -->
+  <section class="page-header">
+    <h1>Get Involved</h1>
+  </section>
+
+  <!-- Mission Section -->
+  <div class="mission-container">
+    <img src="card3.png" alt="High Five Hands" class="hands-img" />
+    <div class="mission-text">
+      <h2>Be Part of Our Mission</h2>
+      <p>At Sanjeevini Cancer Seva Trust, we believe every individual has the power to make a difference in the lives of patients with cancer.</p>
+    </div>
+  </div>
+
+  <!-- Donate Section -->
+  <section class="donate-section">
+    <div class="donate-card">
+      <!-- Image -->
+      <div class="donate-image">
+        <img src="card2.svg" alt="Donate Ribbon Image" />
+      </div>
+
+      <!-- Donate Info -->
+      <div class="donate-info">
+        <h2>Donate</h2>
+        <p>Your financial support helps us provide critical care, treatment, and support to cancer patients. By donating, you directly impact lives, allowing patients access to treatments they might not otherwise afford.</p>
+        <button class="donate-button">Donate Now</button>
+      </div>
+
+      <!-- Ways to Help -->
+      <div class="donate-actions">
+        <ul>
+          <li>
+            <img src="pointer.png" alt="icon" />
+            <div>
+              <strong>Make a One-Time Donation</strong>
+              <p>Any amount makes a difference.</p>
+            </div>
+          </li>
+          <li>
+            <img src="pointer.png" alt="icon" />
+            <div>
+              <strong>Volunteer</strong>
+              <p>Offer your time and skills to help organize events, provide emotional support, or assist in patient outreach.</p>
+            </div>
+          </li>
+          <li>
+            <img src="pointer.png" alt="icon" />
+            <div>
+              <strong>Partner with Us</strong>
+              <p>If you're part of an NGO or organization aligned with our mission, join hands with us to amplify our efforts.</p>
+            </div>
+          </li>
+          <li>
+            <img src="pointer.png" alt="icon" />
+            <div>
+              <strong>Spread Awareness</strong>
+              <p>Share our mission with your community and help raise awareness about our programs.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="support-impact">
+    <h2>Why Your Support Matters</h2>
+    <p class="subtext">When you get involved, you're not just donating or volunteering — you're giving hope to those facing the toughest battles of their lives.</p>
+    <div class="impact-card-wrapper">
+      <div class="impact-card">
+        <div class="icon">💗➕</div>
+        <p>Provide life-saving treatments to cancer patients.</p>
+      </div>
+      <div class="impact-card">
+        <div class="icon">🧠🎗️</div>
+        <p>Raise awareness about early detection and cancer prevention.</p>
+      </div>
+      <div class="impact-card">
+        <div class="icon">🧑‍🤝‍🧑💬</div>
+        <p>Offer emotional and practical support to families affected by cancer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer>
+    <nav class="footer-nav">
+      <div class="ribbon-icon">🎗️</div>
+      <a href="home.html">Home</a>
+      <a href="involved.html">Get Involved</a>
+      <a href="contact.html">Contact Us</a>
+      <div class="ribbon-icon">🎗️</div>
+    </nav>
+
+    <div class="footer-box">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">🎗️</div>
+        <span>SANJEEVINI</span>
+      </div>
+      <h2>With You in Every Step of Care During Cancer</h2>
+      <a href="#" class="read-more-btn">Read More</a>
+    </div>
+
+    <div class="footer-contact">
+      <div class="contact-item">
+        <div class="contact-icon phone-icon-small"></div>
+        <p>+91 6366975666</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon email-icon-small"></div>
+        <p>sanjeevinicancerseva@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon location-icon-small"></div>
+        <p>
+          Mangalore Institute of Oncology<br />
+          Pumpwell, Mangaluru<br />
+          Dakshina Kannada – 575002
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    });
+  </script>
+  <script>
+    function toggleMobileMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+  
+</body>
+</html>
