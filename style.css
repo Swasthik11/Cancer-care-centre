@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Base */
 body {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
@@ -27,7 +26,7 @@ body {
   pointer-events: none;
 }
 
-/* Watermark */
+/* Watermark Text */
 body::after {
   content: "SANJEEVINI";
   position: fixed;
@@ -43,7 +42,6 @@ body::after {
   white-space: nowrap;
 }
 
-/* Content layering */
 header, .about, .objectives, footer {
   position: relative;
   z-index: 1;
@@ -69,17 +67,20 @@ header, .about, .objectives, footer {
   position: relative;
 }
 
-.navbar ul {
-  list-style: none;
+#nav-links {
   display: flex;
   gap: 20px;
+  list-style: none;
+}
+
+#nav-links li {
+  list-style: none;
 }
 
 .navbar a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .navbar a.active,
@@ -95,8 +96,20 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  z-index: 11;
 }
+
+/* Page Header */
+.page-header {
+  background: #f8f4fb;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  color: #7b2d8a;
+}
+
 
 /* About Section */
 .about {
@@ -131,7 +144,7 @@ header, .about, .objectives, footer {
   margin-top: 10px;
 }
 
-/* Orange Checkbox List */
+/* Checkbox List */
 .orange-checkbox-list {
   list-style: none;
   padding-left: 0;
@@ -252,7 +265,6 @@ footer {
   background-color: #d8a31a;
 }
 
-/* Footer Contact */
 .footer-contact {
   display: flex;
   justify-content: space-around;
@@ -280,73 +292,32 @@ footer {
   color: #fff;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-  }
-
   .hamburger {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 30px;
   }
 
-  .navbar ul {
+  #nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    top: 60px;
+    right: 30px;
     background-color: #fff;
-    border-top: 1px solid #e8c6f4;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
-    z-index: 10;
-    transition: all 0.3s ease;
+    border: 1px solid #e8c6f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    gap: 15px;
   }
 
-  .navbar ul.show {
+  #nav-links.show {
     display: flex;
   }
 
-  .navbar ul li {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .footer-box h2 {
-    font-size: 20px;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .footer-contact {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .contact-item {
-    flex-direction: row;
-    width: 90%;
-  }
-
-  .footer-box img {
-    width: 120px;
-  }
-
-  .read-more-btn {
-    padding: 10px 16px;
-    font-size: 14px;
+  #nav-links li {
+    text-align: right;
   }
 }
