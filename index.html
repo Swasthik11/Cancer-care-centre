@@ -3,29 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjeevini Cancer Seva Trust</title>
-  <link rel="stylesheet" href="home.css" />
+  <title>About Us - Sanjeevini Trust</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top-right leaf image -->
+  <!-- ✅ Top-right corner leaf image -->
   <img src="leaf_img.svg" alt="Leaf" class="leaf-top-right" />
 
-  <!-- Header -->
   <header>
     <div class="top-bar">Helpline : 6366975666</div>
     <nav class="navbar">
       <img src="header_logo.svg" alt="Cancer Ribbon" />
-    <!-- Hamburger Menu Icon -->
-<button class="hamburger" onclick="toggleMobileMenu()">☰</button>
 
-<!-- Navigation Links -->
-<ul id="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="index.html">About Us</a></li>
-        <li><a href="involved.html">Get Involved</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+      <!-- Hamburger Menu Icon -->
+      <button class="hamburger" id="hamburger">&#9776;</button>
 
+      <!-- Navigation Links -->
+     <ul id="nav-links">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="index.html">About Us</a></li>
+  <li><a href="involved.html">Get Involved</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+</ul>
     </nav>
   </header>
 
@@ -101,22 +100,16 @@
     </div>
   </footer>
 
+  <!-- ✅ Hamburger Toggle Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
 
-      menuToggle.addEventListener('click', function () {
-        navLinks.classList.toggle('show');
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
       });
     });
   </script>
-  <script>
-    function toggleMobileMenu() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('show');
-    }
-  </script>
-  
 </body>
 </html>
