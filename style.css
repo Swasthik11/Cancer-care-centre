@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Base */
 body {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
@@ -27,7 +26,7 @@ body {
   pointer-events: none;
 }
 
-/* Watermark text on background */
+/* Watermark Text */
 body::after {
   content: "SANJEEVINI";
   position: fixed;
@@ -43,7 +42,6 @@ body::after {
   white-space: nowrap;
 }
 
-/* Ensure page content layers over the watermark */
 header, .about, .objectives, footer {
   position: relative;
   z-index: 1;
@@ -69,10 +67,14 @@ header, .about, .objectives, footer {
   position: relative;
 }
 
-.navbar ul {
-  list-style: none;
+#nav-links {
   display: flex;
   gap: 20px;
+  list-style: none;
+}
+
+#nav-links li {
+  list-style: none;
 }
 
 .navbar a {
@@ -86,6 +88,7 @@ header, .about, .objectives, footer {
   color: #7b2d8a;
 }
 
+/* Hamburger */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -93,8 +96,8 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  z-index: 11;
 }
+
 
 /* About Section */
 .about {
@@ -279,102 +282,30 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .hamburger {
     display: block;
   }
 
-  .navbar ul {
+  #nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
+    top: 60px;
+    right: 30px;
     background-color: #fff;
-    border-top: 1px solid #e8c6f4;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
-    z-index: 10;
+    border: 1px solid #e8c6f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    gap: 15px;
   }
 
-  .navbar ul.show {
+  #nav-links.show {
     display: flex;
   }
 
-  .navbar ul li {
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .footer-box h2 {
-    font-size: 20px;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-
-  .footer-contact {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .contact-item {
-    flex-direction: row;
-    width: 90%;
-  }
-
-  .footer-box img {
-    width: 120px;
-  }
-
-  .read-more-btn {
-    padding: 10px 16px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-text h3 {
-    font-size: 1.1rem;
-  }
-
-  .footer-box h2 {
-    font-size: 18px;
-  }
-
-  .donate-btn, .program-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .navbar {
-    padding: 10px 15px;
-  }
-
-  .navbar a {
-    font-size: 15px;
-  }
-
-  .circle {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
-
-  .vision .card, .info .card, .program-card, .step {
-    width: 90%;
+  #nav-links li {
+    text-align: right;
   }
 }
