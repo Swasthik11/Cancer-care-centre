@@ -22,7 +22,7 @@ body {
   right: 0;
   width: 150px;
   height: auto;
-  z-index: 10; /* Increased for visibility */
+  z-index: 10;
   opacity: 0.2;
   pointer-events: none;
 }
@@ -93,6 +93,7 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
+  z-index: 11;
 }
 
 /* About Section */
@@ -177,6 +178,7 @@ header, .about, .objectives, footer {
   line-height: 1.6;
 }
 
+/* Footer */
 footer {
   background: #7b2d8a;
   color: #fff;
@@ -184,7 +186,6 @@ footer {
   padding-top: 40px;
 }
 
-/* Footer Nav */
 .footer-nav {
   display: flex;
   justify-content: center;
@@ -212,7 +213,6 @@ footer {
   opacity: 0.4;
 }
 
-/* Footer Box */
 .footer-box {
   background: #fff;
   color: #333;
@@ -243,9 +243,13 @@ footer {
   border-radius: 6px;
   font-weight: bold;
   white-space: nowrap;
+  transition: background-color 0.3s ease;
 }
 
-/* Footer Contact */
+.read-more-btn:hover {
+  background-color: #d8a31a;
+}
+
 .footer-contact {
   display: flex;
   justify-content: space-around;
@@ -287,78 +291,6 @@ footer {
   .navbar ul {
     display: none;
     flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 70px;
-    right: 30px;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  .navbar ul.show {
-    display: flex;
-  }
-
-  .footer-box {
-    background: #fff;
-    color: #333;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    max-width: 90%;
-    margin: 20px auto;
-    border-radius: 6px;
-  }
-
-  .footer-box h2 {
-    font-size: 20px;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .ribbon-icon {
-    display: none;
-  }
-
-  .footer-contact {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .contact-item {
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    width: 90%;
-  }
-
-  .contact-item img {
-    width: 20px;
-  }
-
-  .read-more-btn {
-    padding: 8px 18px;
-    font-size: 14px;
-  }
-}
-/* Existing styles remain unchanged up to ... */
-
-/* Mobile Navigation Responsive Fix */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    z-index: 11;
-  }
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
     position: absolute;
     top: 100%;
     right: 0;
@@ -379,27 +311,8 @@ footer {
     margin: 10px 0;
   }
 
-  .hero {
-    flex-direction: column;
-    padding: 40px 5%;
-    text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text h3 {
-    font-size: 1.25rem;
-  }
-
-  .vision, .info, .support-program, .help-section, .mission {
-    padding: 40px 5%;
-  }
-
-  .vision-cards, .info-cards, .program-cards, .steps {
-    flex-direction: column;
-    align-items: center;
+  .footer-box h2 {
+    font-size: 20px;
   }
 
   .footer-nav {
@@ -419,97 +332,13 @@ footer {
     width: 90%;
   }
 
-  .mission {
-    flex-direction: column;
-  }
-
-  .mission-image img {
-    width: 100%;
-  }
-
-  .mission-text {
-    text-align: center;
-    padding: 0;
-  }
-
-  .footer-box h2 {
-    font-size: 20px;
+  .footer-box img {
+    width: 120px;
   }
 
   .read-more-btn {
     padding: 10px 16px;
     font-size: 14px;
-  }
-}
-@media (max-width: 768px) {
-  .mission-container,
-  .donate-section {
-    flex-direction: column;
-    padding: 30px 5%;
-  }
-
-  .mission-text {
-    padding-left: 0;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .footer-contact {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-item {
-    width: 90%;
-  }
-
-  .read-more-btn {
-    padding: 8px 18px;
-    font-size: 14px;
-  }
-
-  .impact-card {
-    max-width: 100%;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #7b2d8a;
-    cursor: pointer;
-  }
-
-  .navbar {
-    flex-direction: row;
-    position: relative;
-  }
-
-  #nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 30px;
-    background-color: #fff;
-    border: 1px solid #e8c6f4;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 999;
-  }
-
-  #nav-links.show {
-    display: flex;
-  }
-
-  #nav-links li {
-    text-align: right;
   }
 }
 
@@ -545,12 +374,7 @@ footer {
     font-size: 14px;
   }
 
-  .footer-box img {
-    width: 120px;
-  }
-
   .vision .card, .info .card, .program-card, .step {
     width: 90%;
   }
 }
-
