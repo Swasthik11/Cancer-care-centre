@@ -15,21 +15,21 @@
     <div class="top-bar">Helpline : 6366975666</div>
     <nav class="navbar">
       <img src="header_logo.svg" alt="Cancer Ribbon" />
-     
+      
+      <!-- Hamburger Menu Icon -->
+      <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
 
-<!-- Navigation Links -->
-<nav class="navbar">
-  <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+      <!-- Navigation Links -->
+      <ul id="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <ul id="nav-links" class="nav-hidden">
-    <li><a href="home.html">Home</a></li>
-    <li><a href="index.html">About Us</a></li>
-    <li><a href="involved.html">Get Involved</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-  </ul>
-</nav>
-      </header>
-
+  <!-- About Section -->
   <section class="about">
     <h1>About Us</h1>
     <div class="about-content">
@@ -49,6 +49,7 @@
     </div>
   </section>
 
+  <!-- Objectives -->
   <section class="objectives">
     <h2>Objectives of the Sanjeevini Cancer Seva Trust</h2>
     <ul>
@@ -63,36 +64,34 @@
     </ul>
   </section>
 
- <footer>
+  <!-- Footer -->
+  <footer>
     <nav class="footer-nav">
-      <div class="ribbon-icon">🎗️</div>
+      <img src="vision_img.svg" alt="Ribbon" class="ribbon-icon" />
       <a href="home.html">Home</a>
       <a href="index.html">About Us</a>
       <a href="involved.html">Get Involved</a>
       <a href="contact.html">Contact Us</a>
-      <div class="ribbon-icon">🎗️</div>
+      <img src="vision_img.svg" alt="Ribbon" class="ribbon-icon" />
     </nav>
 
     <div class="footer-box">
-      <div class="footer-logo">
-        <div class="footer-logo-icon">🎗️</div>
-        <span>SANJEEVINI</span>
-      </div>
+      <img src="header_logo.svg" alt="Sanjeevini Logo" />
       <h2>With You in Every Step of Care During Cancer</h2>
       <a href="#" class="read-more-btn">Read More</a>
     </div>
 
     <div class="footer-contact">
       <div class="contact-item">
-        <div class="contact-icon phone-icon-small"></div>
+        <img src="phone.svg" alt="Phone" />
         <p>+91 6366975666</p>
       </div>
       <div class="contact-item">
-        <div class="contact-icon email-icon-small"></div>
+        <img src="email.svg" alt="Email" />
         <p>sanjeevinicancerseva@gmail.com</p>
       </div>
       <div class="contact-item">
-        <div class="contact-icon location-icon-small"></div>
+        <img src="location.svg" alt="Location" />
         <p>
           Mangalore Institute of Oncology<br />
           Pumpwell, Mangaluru<br />
@@ -102,28 +101,11 @@
     </div>
   </footer>
 
-         
   <!-- ✅ Hamburger Toggle Script -->
   <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // Optional: Close nav on link click (mobile)
-    const links = navLinks.querySelectorAll("a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-  </script>
-  <script>
     function toggleMobileMenu() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('show');
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("show");
     }
   </script>
 </body>
