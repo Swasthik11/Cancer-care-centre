@@ -90,13 +90,16 @@ header, .about, .objectives, footer {
 
 /* Hamburger */
 .hamburger {
-  display: none;
+  display: block;
   font-size: 28px;
   background: none;
   border: none;
   color: #7b2d8a;
   cursor: pointer;
+  position: relative; /* Needed for z-index to work */
+  z-index: 1001;       /* Higher than the about image and nav menu */
 }
+
 
 
 /* About Section */
@@ -287,6 +290,11 @@ footer {
       flex-direction: column;
       padding: 30px 5%;
   }
+@media (max-width: 768px) {
+  .hamburger {
+    margin-left: auto;
+  }
+}
 
   .mission-text {
       padding-left: 0;
