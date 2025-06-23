@@ -122,6 +122,19 @@ header, .about, .objectives, footer {
 .hero-text p {
   margin: 10px 0 20px;
 }
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 20px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
 
 .donate-btn {
   background-color: #f9a825;
