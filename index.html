@@ -6,12 +6,15 @@
   <title>Sanjeevini Cancer Seva Trust</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Inline hamburger-specific fix */
     .hamburger {
       display: none;
     }
 
     @media (max-width: 768px) {
+      .navbar {
+        position: relative;
+      }
+
       .hamburger {
         display: block;
         font-size: 28px;
@@ -19,10 +22,11 @@
         border: none;
         color: #7b2d8a;
         cursor: pointer;
-        z-index: 1001;
         position: absolute;
-        right: 30px;
-        top: 20px;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        z-index: 1001;
       }
 
       #nav-links {
@@ -140,6 +144,7 @@
     </div>
   </footer>
 
+  <!-- Mobile Toggle Script -->
   <script>
     function toggleMobileMenu() {
       const navLinks = document.getElementById("nav-links");
