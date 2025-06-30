@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Get Involved - Sanjeevini Trust</title>
-  <link rel="stylesheet" href="aboutus.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Top-right leaf image -->
@@ -23,8 +23,8 @@
       <ul id="nav-links">
         <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
         <li><a href="home.html">Home</a></li>
-        <li><a class="active" href="aboutus.html">About Us</a></li>
-        <li><a href="index.html">Get Involved</a></li>
+        <li><a class="active" href="index.html">About Us</a></li>
+        <li><a href="involved.html">Get Involved</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
@@ -63,14 +63,14 @@
       <li><span class="bullet-icon">🎗️</span> Old age home for the needy via a sustainable model.</li>
     </ul>
   </section>
-  
 
+  <!-- Footer -->
   <footer>
     <nav class="footer-nav">
       <div class="ribbon-icon">🎗️</div>
       <a href="home.html">Home</a>
-      <a href="aboutus.html">About Us</a>
-      <a href="index.html">Get Involved</a>
+      <a href="index.html">About Us</a>
+      <a href="involved.html">Get Involved</a>
       <a href="contact.html">Contact Us</a>
       <div class="ribbon-icon">🎗️</div>
     </nav>
@@ -100,35 +100,19 @@
     </div>
   </footer>
 
-  <!-- Toggle script -->
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // Optional: Close nav on link click (mobile)
-    const links = navLinks.querySelectorAll("a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-  </script>
+  <!-- Mobile Menu Toggle Script -->
   <script>
     function toggleMobileMenu() {
       const navLinks = document.getElementById('nav-links');
       navLinks.classList.toggle('show');
     }
-   
-  function toggleMobileMenu() {
-    const nav = document.getElementById('nav-links');
-    nav.classList.toggle('show');
-  }
 
-
+    // Optional: Close mobile menu when a link is clicked
+    document.querySelectorAll('#nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('show');
+      });
+    });
   </script>
 </body>
 </html>
