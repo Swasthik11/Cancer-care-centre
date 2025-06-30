@@ -21,7 +21,7 @@ body {
   right: 0;
   width: 150px;
   height: auto;
-  z-index: 1;
+  z-index: 10;
   opacity: 0.2;
   pointer-events: none;
 }
@@ -54,7 +54,6 @@ header, .about, .objectives, footer {
   text-align: center;
   padding: 8px;
   font-size: 14px;
-  z-index: 1000;
 }
 
 /* Navbar */
@@ -71,24 +70,59 @@ header, .about, .objectives, footer {
 
 /* Hamburger */
 .hamburger {
-  display: none;
   font-size: 28px;
   background: none;
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  position: fixed;
-  top: 18px;
-  right: 20px;
-  z-index: 10002;
+  display: none;
 }
 
-/* Nav Links (Desktop) */
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e4c2f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  z-index: 1001;
+  width: 180px;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #7b2d8a;
+  font-weight: 500;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5ecf9;
+  border-radius: 5px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Desktop Nav - Hide mobile dropdown */
 #nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
-  z-index: 1001;
 }
 
 #nav-links li {
@@ -106,45 +140,20 @@ header, .about, .objectives, footer {
   color: #7b2d8a;
 }
 
-/* Mobile Nav Menu */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
+  #nav-links {
+    display: none;
+  }
+
   .hamburger {
     display: block;
   }
 
-  #nav-links {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    background: white;
-    width: 260px;
-    height: 100vh;
-    padding: 60px 20px 20px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 10001;
-    transition: left 0.3s ease-in-out;
-  }
-
-  #nav-links.show {
-    left: 0;
-  }
-
-  .close-btn {
-    display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #7b2d8a;
-    cursor: pointer;
-    z-index: 10002;
-  }
-
-  #nav-links li {
-    margin: 15px 0;
+  .dropdown-menu {
+    top: 45px;
+    right: 10px;
+    width: 200px;
   }
 }
 
@@ -194,17 +203,6 @@ header, .about, .objectives, footer {
 .orange-checkbox-list li::before {
   content: "🟧";
   margin-right: 10px;
-}
-
-/* Objectives */
-.objectives {
-  padding: 30px;
-  background: #fff;
-}
-
-.objectives h2 {
-  color: #7b2d8a;
-  margin-bottom: 20px;
 }
 
 .objectives-list {
