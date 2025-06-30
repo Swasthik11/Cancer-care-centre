@@ -16,17 +16,16 @@
     <nav class="navbar">
       <img src="header_logo.svg" alt="Cancer Ribbon" />
 
-      <!-- Hamburger Menu Icon -->
-      <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
-
-      <!-- Navigation Links -->
-      <ul id="nav-links">
-        <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
-        <li><a href="home.html">Home</a></li>
-        <li><a class="active" href="aboutus.html">About Us</a></li>
-        <li><a href="index.html">Get Involved</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+      <!-- Dropdown Hamburger Menu -->
+      <div class="dropdown">
+        <button class="hamburger" onclick="toggleDropdown()">☰</button>
+        <ul id="dropdown-menu" class="dropdown-menu">
+          <li><a href="home.html">Home</a></li>
+          <li><a class="active" href="aboutus.html">About Us</a></li>
+          <li><a href="index.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -64,7 +63,6 @@
     </ul>
   </section>
 
-  <!-- Footer -->
   <footer>
     <nav class="footer-nav">
       <div class="ribbon-icon">🎗️</div>
@@ -100,18 +98,20 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Toggle Script -->
+  <!-- Script for Dropdown -->
   <script>
-    function toggleMobileMenu() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('show');
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdown-menu');
+      dropdown.classList.toggle('show');
     }
 
-    // Optional: Close mobile menu when a link is clicked
-    document.querySelectorAll('#nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-links').classList.remove('show');
-      });
+    // Close dropdown when clicking outside
+    window.addEventListener('click', function(e) {
+      const dropdown = document.getElementById('dropdown-menu');
+      const button = document.querySelector('.hamburger');
+      if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('show');
+      }
     });
   </script>
 </body>
