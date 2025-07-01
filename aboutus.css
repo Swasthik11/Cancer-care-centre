@@ -130,6 +130,10 @@ header, .about, .objectives, footer {
   background-color: #f5ecf9;
   border-radius: 6px;
 }
+.dropdown-menu {
+  z-index: 9999 !important; /* or at least higher than other elements */
+}
+
 
 .dropdown-menu.show {
   display: block;
@@ -183,6 +187,14 @@ header, .about, .objectives, footer {
   align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
+}
+.about,
+.about-content img,
+header,
+nav,
+footer {
+  position: relative;
+  z-index: 1; /* keep content below the dropdown */
 }
 
 .about-content img {
