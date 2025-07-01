@@ -42,7 +42,7 @@ body::after {
   white-space: nowrap;
 }
 
-header, .about, .objectives, footer {
+header, .about, .objectives, footer, nav {
   position: relative;
   z-index: 1;
 }
@@ -54,7 +54,6 @@ header, .about, .objectives, footer {
   text-align: center;
   padding: 8px;
   font-size: 14px;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -70,12 +69,11 @@ header, .about, .objectives, footer {
   background: #fff;
   padding: 15px 20px;
   border-bottom: 1px solid #e8c6f4;
-
   position: fixed;
   top: 40px; /* below the top-bar */
   left: 0;
   right: 0;
-  z-index: 5000;
+  z-index: 6001;
 }
 
 /* Hamburger */
@@ -85,32 +83,30 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  display: none;
-
+  display: block;
   position: relative;
-  z-index: 7000;
+  z-index: 10000;
 }
 
-/* Dropdown */
 .dropdown {
   position: relative;
+  z-index: 10000;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 40px; /* below hamburger */
-  right: 0;
-  left: auto;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   background: #fff;
   border: 1px solid #e4c2f1;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   list-style: none;
-  padding: 12px 0;
-  z-index: 6500;
-  min-width: 180px;
-  text-align: left;
+  padding: 10px 0;
+  z-index: 9999;
+  width: 200px;
 }
 
 .dropdown-menu li {
@@ -130,18 +126,9 @@ header, .about, .objectives, footer {
   background-color: #f5ecf9;
   border-radius: 6px;
 }
-.dropdown-menu {
-  z-index: 9999 !important; /* or at least higher than other elements */
-}
-
 
 .dropdown-menu.show {
   display: block;
-}
-.dropdown-menu {
-  left: 50%;
-  transform: translateX(-50%);
-  right: auto;
 }
 
 /* Active & hover state */
@@ -164,7 +151,9 @@ header, .about, .objectives, footer {
 
   .dropdown-menu {
     top: 48px;
+    left: auto;
     right: 8px;
+    transform: none;
     width: 200px;
   }
 }
@@ -173,6 +162,8 @@ header, .about, .objectives, footer {
 .about {
   padding: 40px 30px;
   background: #faf4fb;
+  position: relative;
+  z-index: 1;
 }
 
 .about h1 {
@@ -187,14 +178,8 @@ header, .about, .objectives, footer {
   align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
-}
-.about,
-.about-content img,
-header,
-nav,
-footer {
   position: relative;
-  z-index: 1; /* keep content below the dropdown */
+  z-index: 1;
 }
 
 .about-content img {
@@ -202,6 +187,8 @@ footer {
   width: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
+  position: relative;
+  z-index: 1;
 }
 
 .about-content > div {
