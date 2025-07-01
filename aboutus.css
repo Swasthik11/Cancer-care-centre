@@ -12,6 +12,7 @@ body {
   background: #fff;
   position: relative;
   overflow-x: hidden;
+  padding-top: 120px; /* space for top-bar + fixed navbar */
 }
 
 /* Decorative Leaf Image */
@@ -53,6 +54,12 @@ header, .about, .objectives, footer {
   text-align: center;
   padding: 8px;
   font-size: 14px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6000;
 }
 
 /* Navbar */
@@ -63,8 +70,12 @@ header, .about, .objectives, footer {
   background: #fff;
   padding: 15px 20px;
   border-bottom: 1px solid #e8c6f4;
-  position: relative;
-  z-index: 1000;
+
+  position: fixed;
+  top: 40px; /* below the top-bar */
+  left: 0;
+  right: 0;
+  z-index: 5000;
 }
 
 /* Hamburger */
@@ -76,9 +87,8 @@ header, .about, .objectives, footer {
   cursor: pointer;
   display: none;
 
-  /* ADD THESE */
   position: relative;
-  z-index: 3000;
+  z-index: 7000;
 }
 
 /* Dropdown */
@@ -97,9 +107,8 @@ header, .about, .objectives, footer {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 10px 0;
-  z-index: 2500; /* Ensure it's above other content */
+  z-index: 6500;
 }
-
 
 .dropdown-menu li {
   padding: 12px 20px;
