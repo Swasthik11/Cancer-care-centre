@@ -99,19 +99,22 @@ header, .about, .objectives, footer {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 50px;
-  right: 10px;
+  top: 40px; /* below hamburger */
+  right: 0;
+  left: auto;
   background: #fff;
   border: 1px solid #e4c2f1;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   list-style: none;
-  padding: 10px 0;
+  padding: 12px 0;
   z-index: 6500;
+  min-width: 180px;
+  text-align: left;
 }
 
 .dropdown-menu li {
-  padding: 12px 20px;
+  padding: 10px 20px;
 }
 
 .dropdown-menu a {
@@ -120,6 +123,7 @@ header, .about, .objectives, footer {
   font-weight: 500;
   display: block;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
@@ -129,6 +133,11 @@ header, .about, .objectives, footer {
 
 .dropdown-menu.show {
   display: block;
+}
+.dropdown-menu {
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
 }
 
 /* Active & hover state */
