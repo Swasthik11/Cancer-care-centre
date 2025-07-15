@@ -65,6 +65,7 @@ header, .about, .objectives, footer {
   padding: 15px 30px;
   border-bottom: 1px solid #e8c6f4;
   position: relative;
+  z-index: 1000;
 }
 
 #nav-links {
@@ -77,14 +78,15 @@ header, .about, .objectives, footer {
   list-style: none;
 }
 
-.navbar a {
+#nav-links li a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.navbar a.active,
-.navbar a:hover {
+#nav-links li a:hover,
+#nav-links li a.active {
   color: #7b2d8a;
 }
 
@@ -96,25 +98,6 @@ header, .about, .objectives, footer {
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-}
-
-
-/* Nav Links - Desktop */
-#nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-#nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.navbar a.active,
-.navbar a:hover {
-  color: #7b2d8a;
 }
 
 /* Mobile Nav Menu */
@@ -157,6 +140,10 @@ header, .about, .objectives, footer {
 
   #nav-links li {
     margin: 15px 0;
+  }
+
+  #nav-links li a {
+    font-size: 18px;
   }
 }
 
