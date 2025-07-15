@@ -1,33 +1,32 @@
-/* Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE STYLES */
 body {
   font-family: 'Segoe UI', sans-serif;
   color: #333;
   line-height: 1.6;
   background: #fff;
-  position: relative;
   overflow-x: hidden;
-  padding-top: 120px; /* space for top-bar + fixed navbar */
+  padding-top: 120px; /* top-bar + fixed navbar */
+  position: relative;
 }
 
-/* Decorative Leaf Image */
+/* DECORATIVE ELEMENTS */
 .leaf-top-right {
   position: fixed;
   top: 0;
   right: 0;
   width: 150px;
-  height: auto;
-  z-index: 10;
   opacity: 0.2;
   pointer-events: none;
+  z-index: 10;
 }
 
-/* Watermark Text */
 body::after {
   content: "SANJEEVINI";
   position: fixed;
@@ -42,12 +41,13 @@ body::after {
   white-space: nowrap;
 }
 
+/* COMMON POSITIONING FIXES */
 header, .about, .objectives, footer, nav {
   position: relative;
   z-index: 1;
 }
 
-/* Top Bar */
+/* TOP BAR */
 .top-bar {
   background: #7b2d8a;
   color: #fff;
@@ -61,7 +61,7 @@ header, .about, .objectives, footer, nav {
   z-index: 6000;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -70,24 +70,34 @@ header, .about, .objectives, footer, nav {
   padding: 15px 20px;
   border-bottom: 1px solid #e8c6f4;
   position: fixed;
-  top: 40px; /* below the top-bar */
+  top: 40px;
   left: 0;
   right: 0;
   z-index: 6001;
 }
 
-/* Hamburger */
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  color: #7b2d8a;
+}
+
+/* HAMBURGER */
 .hamburger {
   font-size: 28px;
   background: none;
   border: none;
   color: #7b2d8a;
   cursor: pointer;
-  display: block;
-  position: relative;
   z-index: 10000;
 }
 
+/* DROPDOWN MENU */
 .dropdown {
   position: relative;
   z-index: 10000;
@@ -105,7 +115,6 @@ header, .about, .objectives, footer, nav {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 10px 0;
-  z-index: 9999;
   width: 200px;
 }
 
@@ -131,39 +140,10 @@ header, .about, .objectives, footer, nav {
   display: block;
 }
 
-/* Active & hover state */
-.navbar a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.navbar a.active,
-.navbar a:hover {
-  color: #7b2d8a;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .dropdown-menu {
-    top: 48px;
-    left: auto;
-    right: 8px;
-    transform: none;
-    width: 200px;
-  }
-}
-
-/* About Section */
+/* ABOUT SECTION */
 .about {
   padding: 40px 30px;
   background: #faf4fb;
-  position: relative;
-  z-index: 1;
 }
 
 .about h1 {
@@ -174,21 +154,15 @@ header, .about, .objectives, footer, nav {
 
 .about-content {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 40px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
+  gap: 40px;
+  align-items: flex-start;
 }
 
 .about-content img {
-  max-width: 100%;
   width: 300px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
-  position: relative;
-  z-index: 1;
 }
 
 .about-content > div {
@@ -203,13 +177,23 @@ header, .about, .objectives, footer, nav {
 
 .orange-checkbox-list {
   list-style: none;
-  padding-left: 0;
   margin-top: 15px;
 }
 
 .orange-checkbox-list li::before {
   content: "🟧";
   margin-right: 10px;
+}
+
+/* OBJECTIVES SECTION */
+.objectives {
+  padding: 30px;
+}
+
+.objectives h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #7b2d8a;
 }
 
 .objectives-list {
@@ -232,7 +216,7 @@ header, .about, .objectives, footer, nav {
   line-height: 1.5;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background: #7b2d8a;
   color: #fff;
@@ -292,7 +276,7 @@ footer {
   background-color: #d8a31a;
 }
 
-/* Contact Section */
+/* CONTACT SECTION */
 .footer-contact {
   display: flex;
   justify-content: space-around;
@@ -331,7 +315,7 @@ footer {
   color: #fff;
 }
 
-/* Mobile Fixes */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
@@ -344,6 +328,14 @@ footer {
 
   .about-content > div {
     text-align: left;
+  }
+
+  .dropdown-menu {
+    top: 48px;
+    left: auto;
+    right: 8px;
+    transform: none;
+    width: 200px;
   }
 
   .footer-contact {
